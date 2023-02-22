@@ -47,24 +47,24 @@ class Modules
      */
     public function register()
     {
-        $reflection = new \ReflectionClass($this->app->request->query);
+        $reflection = new \ReflectionClass($this->app->request->server);
         $property = $reflection->getProperty('parameters');
         $property->setAccessible(true);
         $query = $property->getValue($this->app->request->query);
 
-        if (isset($query['s'])){
-            $sArr = explode("/",$query['s']);
+        if (isset($query['REQUEST_URI'])) {
+            $sArr = explode("/", $query['REQUEST_URI']);
             $this->currModule = $sArr[2] ?? '';
         }
-        
+
         $modules = $this->repository->enabled();
-        
+
         $modules->each(function ($module) {
             $this->authModules[] = $module['slug'];
         });
 
         $modules->each(function ($module) {
-            if(in_array($this->currModule,$this->authModules) && $this->currModule != $module['slug']){
+            if (in_array($this->currModule, $this->authModules) && $this->currModule != $module['slug']) {
                 return;
             }
 
