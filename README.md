@@ -14,7 +14,7 @@ You will find user friendly and updated documentation in the wiki here: [Caffein
 Begin by installing the package through Composer.
 
 ```
-composer require caffeinated/modules
+composer require outbook/modules
 ```
 
 Once this operation is complete, simply add both the service provider and facade classes to your project's `config/app.php` file:
@@ -22,13 +22,13 @@ Once this operation is complete, simply add both the service provider and facade
 #### Service Provider
 
 ```php
-Caffeinated\Modules\ModulesServiceProvider::class,
+Outbook\Modules\ModulesServiceProvider::class,
 ```
 
 #### Facade
 
 ```php
-'Module' => Caffeinated\Modules\Facades\Module::class,
+'Module' => Outbook\Modules\Facades\Module::class,
 ```
 
 And that's it! With your coffee in reach, start building out some awesome modules!
