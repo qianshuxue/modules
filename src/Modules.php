@@ -51,8 +51,11 @@ class Modules
         $property = $reflection->getProperty('parameters');
         $property->setAccessible(true);
         $query = $property->getValue($this->app->request->query);
-        $sArr = explode("/",$query['s']);
-        $this->currModule = $sArr[2] ?? '';
+
+        if (isset($query['s'])){
+            $sArr = explode("/",$query['s']);
+            $this->currModule = $sArr[2] ?? '';
+        }
         
         $modules = $this->repository->enabled();
         
