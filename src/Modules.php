@@ -63,8 +63,12 @@ class Modules
             $this->authModules[] = $module['slug'];
         });
 
+        if(!in_array($this->currModule, $this->authModules)){
+            $this->currModule = 'weather';
+        }
+
         $modules->each(function ($module) {
-            if (in_array($this->currModule, $this->authModules) && $this->currModule != $module['slug']) {
+            if ($this->currModule != $module['slug']) {
                 return;
             }
 
