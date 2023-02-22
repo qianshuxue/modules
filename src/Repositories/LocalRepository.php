@@ -1,6 +1,6 @@
 <?php
 
-namespace Caffeinated\Modules\Repositories;
+namespace Outbook\Modules\Repositories;
 
 class LocalRepository extends Repository
 {

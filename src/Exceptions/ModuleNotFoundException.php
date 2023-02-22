@@ -5,7 +5,7 @@
  * Time: 5:27 PM
  */
 
-namespace Caffeinated\Modules\Exceptions;
+namespace Outbook\Modules\Exceptions;
 
 
 class ModuleNotFoundException extends \Exception {

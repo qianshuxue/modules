@@ -1,8 +1,8 @@
 <?php
 
-namespace Caffeinated\Modules\Console\Commands;
+namespace Outbook\Modules\Console\Commands;
 
-use Caffeinated\Modules\Modules;
+use Outbook\Modules\Modules;
 use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;

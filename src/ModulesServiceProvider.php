@@ -1,13 +1,13 @@
 <?php
 
-namespace Caffeinated\Modules;
+namespace Outbook\Modules;
 
-use Caffeinated\Modules\Contracts\Repository;
-use Caffeinated\Modules\Providers\BladeServiceProvider;
-use Caffeinated\Modules\Providers\ConsoleServiceProvider;
-use Caffeinated\Modules\Providers\GeneratorServiceProvider;
-use Caffeinated\Modules\Providers\HelperServiceProvider;
-use Caffeinated\Modules\Providers\RepositoryServiceProvider;
+use Outbook\Modules\Contracts\Repository;
+use Outbook\Modules\Providers\BladeServiceProvider;
+use Outbook\Modules\Providers\ConsoleServiceProvider;
+use Outbook\Modules\Providers\GeneratorServiceProvider;
+use Outbook\Modules\Providers\HelperServiceProvider;
+use Outbook\Modules\Providers\RepositoryServiceProvider;
 use Illuminate\Support\ServiceProvider;
 
 class ModulesServiceProvider extends ServiceProvider

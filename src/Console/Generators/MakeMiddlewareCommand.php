@@ -1,8 +1,8 @@
 <?php
 
-namespace Caffeinated\Modules\Console\Generators;
+namespace Outbook\Modules\Console\Generators;
 
-use Caffeinated\Modules\Console\GeneratorCommand;
+use Outbook\Modules\Console\GeneratorCommand;
 
 class MakeMiddlewareCommand extends GeneratorCommand
 {

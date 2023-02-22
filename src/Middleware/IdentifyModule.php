@@ -1,21 +1,21 @@
 <?php
 
-namespace Caffeinated\Modules\Middleware;
+namespace Outbook\Modules\Middleware;
 
-use Caffeinated\Modules\Modules;
+use Outbook\Modules\Modules;
 use Closure;
 
 class IdentifyModule
 {
     /**
-     * @var Caffeinated\Modules
+     * @var Outbook\Modules
      */
     protected $module;
 
     /**
      * Create a new IdentifyModule instance.
      *
-     * @param Caffeinated\Modules $module
+     * @param Outbook\Modules $module
      */
     public function __construct(Modules $module)
     {

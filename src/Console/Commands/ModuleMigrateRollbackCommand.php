@@ -1,9 +1,9 @@
 <?php
 
-namespace Caffeinated\Modules\Console\Commands;
+namespace Outbook\Modules\Console\Commands;
 
-use Caffeinated\Modules\Modules;
-use Caffeinated\Modules\Traits\MigrationTrait;
+use Outbook\Modules\Modules;
+use Outbook\Modules\Traits\MigrationTrait;
 use Illuminate\Console\Command;
 use Illuminate\Console\ConfirmableTrait;
 use Illuminate\Database\Migrations\Migrator;

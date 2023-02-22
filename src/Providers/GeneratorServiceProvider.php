@@ -1,6 +1,6 @@
 <?php
 
-namespace Caffeinated\Modules\Providers;
+namespace Outbook\Modules\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -20,16 +20,16 @@ class GeneratorServiceProvider extends ServiceProvider
     public function register()
     {
         $generators = [
-            'command.make.module'            => \Caffeinated\Modules\Console\Generators\MakeModuleCommand::class,
-            'command.make.module.controller' => \Caffeinated\Modules\Console\Generators\MakeControllerCommand::class,
-            'command.make.module.middleware' => \Caffeinated\Modules\Console\Generators\MakeMiddlewareCommand::class,
-            'command.make.module.migration'  => \Caffeinated\Modules\Console\Generators\MakeMigrationCommand::class,
-            'command.make.module.model'      => \Caffeinated\Modules\Console\Generators\MakeModelCommand::class,
-            'command.make.module.policy'     => \Caffeinated\Modules\Console\Generators\MakePolicyCommand::class,
-            'command.make.module.provider'   => \Caffeinated\Modules\Console\Generators\MakeProviderCommand::class,
-            'command.make.module.request'    => \Caffeinated\Modules\Console\Generators\MakeRequestCommand::class,
-            'command.make.module.seeder'     => \Caffeinated\Modules\Console\Generators\MakeSeederCommand::class,
-            'command.make.module.test'       => \Caffeinated\Modules\Console\Generators\MakeTestCommand::class,
+            'command.make.module'            => \Outbook\Modules\Console\Generators\MakeModuleCommand::class,
+            'command.make.module.controller' => \Outbook\Modules\Console\Generators\MakeControllerCommand::class,
+            'command.make.module.middleware' => \Outbook\Modules\Console\Generators\MakeMiddlewareCommand::class,
+            'command.make.module.migration'  => \Outbook\Modules\Console\Generators\MakeMigrationCommand::class,
+            'command.make.module.model'      => \Outbook\Modules\Console\Generators\MakeModelCommand::class,
+            'command.make.module.policy'     => \Outbook\Modules\Console\Generators\MakePolicyCommand::class,
+            'command.make.module.provider'   => \Outbook\Modules\Console\Generators\MakeProviderCommand::class,
+            'command.make.module.request'    => \Outbook\Modules\Console\Generators\MakeRequestCommand::class,
+            'command.make.module.seeder'     => \Outbook\Modules\Console\Generators\MakeSeederCommand::class,
+            'command.make.module.test'       => \Outbook\Modules\Console\Generators\MakeTestCommand::class,
         ];
 
         foreach ($generators as $slug => $class) {

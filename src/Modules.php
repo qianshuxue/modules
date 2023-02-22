@@ -1,9 +1,9 @@
 <?php
 
-namespace Caffeinated\Modules;
+namespace Outbook\Modules;
 
-use Caffeinated\Modules\Contracts\Repository;
-use Caffeinated\Modules\Exceptions\ModuleNotFoundException;
+use Outbook\Modules\Contracts\Repository;
+use Outbook\Modules\Exceptions\ModuleNotFoundException;
 use Illuminate\Foundation\Application;
 
 class Modules

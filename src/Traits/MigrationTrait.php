@@ -1,6 +1,6 @@
 <?php
 
-namespace Caffeinated\Modules\Traits;
+namespace Outbook\Modules\Traits;
 
 trait MigrationTrait
 {
