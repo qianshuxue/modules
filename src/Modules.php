@@ -24,11 +24,6 @@ class Modules
     protected $currModule;
 
     /**
-     * @var AuthModules
-     */
-    protected $authModules;
-
-    /**
      * Create a new Modules instance.
      *
      * @param Application $app
@@ -50,25 +45,32 @@ class Modules
         $reflection = new \ReflectionClass($this->app->request->server);
         $property = $reflection->getProperty('parameters');
         $property->setAccessible(true);
-        $query = $property->getValue($this->app->request->query);
+        $server = $property->getValue($this->app->request->server);
 
-        if (isset($query['REQUEST_URI'])) {
-            $sArr = explode("/", $query['REQUEST_URI']);
-            $this->currModule = $sArr[2] ?? '';
+        if (isset($server['REQUEST_URI'])) {
+            $uriArr = explode("?", $server['REQUEST_URI']);
+            $uri = $uriArr[0] ?? '';
+            $content = @file_get_contents(storage_path('all_route_list.json'));
+            if ($content){
+                $allRouteList = json_decode($content,true);
+                $uri = ltrim($uri,'/');
+                if(isset($allRouteList['routes'][$uri])){
+                    $this->currModule = $allRouteList['routes'][$uri];
+                }else{
+                    foreach($allRouteList['preg'] as $r => $m){
+                        if (preg_match($r, $uri)){
+                            $this->currModule = $m;
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
         $modules = $this->repository->enabled();
 
         $modules->each(function ($module) {
-            $this->authModules[] = $module['slug'];
-        });
-
-        if(!in_array($this->currModule, $this->authModules)){
-            $this->currModule = 'weather';
-        }
-
-        $modules->each(function ($module) {
-            if ($this->currModule != $module['slug']) {
+            if (!empty($this->currModule) && $this->currModule != $module['name']) {
                 return;
             }
 
