@@ -70,7 +70,7 @@ class Modules
         $modules = $this->repository->enabled();
 
         $modules->each(function ($module) {
-            if (!empty($this->currModule) && $this->currModule != $module['name']) {
+            if (!empty($this->currModule) && $this->currModule != $module['basename']) {
                 return;
             }
 
